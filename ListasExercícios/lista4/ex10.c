@@ -37,7 +37,7 @@ int* alocarVetor(int tam){
 
     int *vet = NULL;
 
-    if(!(vet  = calloc(tam, sizeof(int) * tam))){
+    if(!(vet  = calloc(tam, sizeof(int)))){
         puts("Memória Indisponível.");
         exit(2);
     }

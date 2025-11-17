@@ -22,9 +22,9 @@ int main(int argc, char **argv){
     int tam_vetor = atoi(*(argv+1));
     int max_value = atoi(*(argv+2));
 
-    int *vetor_x = calloc( tam_vetor, sizeof(int)*tam_vetor );
+    int *vetor_x = calloc( tam_vetor, sizeof(int));
 
-    int *vetor_y = calloc( tam_vetor, sizeof(int)*tam_vetor );
+    int *vetor_y = calloc( tam_vetor, sizeof(int));
 
     if((!vetor_x) || (!vetor_y)){
         puts("Memória Indisponível.");
@@ -64,14 +64,14 @@ int** alocarMatriz(int max){
 
     int **matriz = NULL;
 
-    if(!(matriz = (int**) calloc(max, sizeof(int*) * max))){
+    if(!(matriz = (int**) calloc(max, sizeof(int*)))){
         puts("Memória Indisponível.");
         exit(3);
     }
 
     for(int i = 0; i<max; i++){
 
-        if(!(*(matriz+i) = (int*) calloc(max, sizeof(int) * max))){
+        if(!(*(matriz+i) = (int*) calloc(max, sizeof(int)))){
             puts("Memória Indisponível");
             exit(4);
         }
