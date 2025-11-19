@@ -12,6 +12,7 @@ void exibirVetor(int *, int);
 void erroMedioQuadratico(int *, int *, int);
 void erroAbsolutoMedio(int *, int *, int);
 void preencherVetor(int *, int, void (*exibirVetor)(int*, int));
+void calcularErro(int *, int *, int , void (*funcaoErro)(int *, int *, int));
 
 int main(int argc, char **argv){
 
@@ -44,7 +45,10 @@ int main(int argc, char **argv){
     preencherVetor(vetor_A, N, exibirVetor);
     preencherVetor(vetor_B,N, exibirVetor);
 
-    (vetFunc[erroFunc])(vetor_A, vetor_B, N);
+    calcularErro(vetor_A,vetor_B, N, vetFunc[erroFunc]);
+
+    free(vetor_A);
+    free(vetor_B);
 
     return 0;
 }
@@ -96,7 +100,7 @@ void erroAbsolutoMedio(int *vetA, int *vetB, int tam){
     printf("\nErro Absoluto Médio = %.3lf\n\n", mae);
 }
 
-void preencherVetor(int *vet, int tam, void (*exibirVetor)(int *vet, int tam)){
+void preencherVetor(int *vet, int tam, void (*exibirVetor)(int *, int )){
 
     for(int i = 0; i<tam; i++){
 
@@ -105,4 +109,13 @@ void preencherVetor(int *vet, int tam, void (*exibirVetor)(int *vet, int tam)){
 
     (exibirVetor)(vet, tam);
 
+}
+
+void calcularErro(int *vetA, int *vetB, int tam, void (*funcaoErro)(int *, int *, int )){
+
+    printf("\nCálculo do Erro\n");
+
+    (funcaoErro)(vetA, vetB, tam);
+
+    printf("\n-------------------------------\n");
 }
