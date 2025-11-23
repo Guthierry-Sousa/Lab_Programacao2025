@@ -1,0 +1,2 @@
+Nome                           Idade Sexo 
+guthy                          18    m    
