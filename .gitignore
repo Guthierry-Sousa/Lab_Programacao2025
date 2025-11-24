@@ -2,3 +2,5 @@
 .vscode/
 # Ignorar todos arquivos compilados com extensão .e
 *.e
+# Ignorar todos arquivos compilados com extensão .dat
+*.dat
