@@ -260,7 +260,8 @@ void gerarMatrizSCM(int **M, int **imgI, int **imgS, Imagem imagem){
     for(int i = 0; i < max; i++){
         for(int j = 0; j < max; j++){
 
-            fprintf(scm, "%d ", M[i][j]);
+            fprintf(scm, "%d", M[i][j]);
+            if(j < max - 1) fprintf(scm, " ");
 
         }
 
