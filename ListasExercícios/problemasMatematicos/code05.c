@@ -116,7 +116,7 @@ void calcularMedia(Alunos *a, int const qtd){
 
         for(int j = 0 ; j < QTD_NOTAS; j++){
 
-            somatorio += a[i].notas[i];
+            somatorio += a[i].notas[j];
 
         }
 
@@ -164,7 +164,7 @@ void maiorMedia(Alunos *a, int const qtd){
 
     Alunos alunoMaiorMedia = a[0];
 
-    for(int i = 1; i < qtd - 1; i++){
+    for(int i = 1; i < qtd ; i++){
 
         if(a[i].media > alunoMaiorMedia.media){
             alunoMaiorMedia = a[i];
@@ -180,7 +180,7 @@ void maiorDesvioPadrao(Alunos *a, int const qtd){
 
     Alunos alunoMaiorDP = a[0];
 
-    for(int i = 1; i < qtd - 1; i++){
+    for(int i = 1; i < qtd; i++){
 
         if(a[i].desvioPadrao > alunoMaiorDP.desvioPadrao){
             alunoMaiorDP = a[i];
