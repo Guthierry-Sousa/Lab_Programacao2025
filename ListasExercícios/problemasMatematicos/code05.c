@@ -35,6 +35,10 @@ int main(int argc, char **argv){
     }
 
     int qtdAlunos = atoi(*(argv+1));
+    if(qtdAlunos <= 0){
+        printf("Quantidade Inválida de alunos\n");
+        exit(2);
+    }
 
     // Alocação de memória
     Alunos *alunos = NULL;
@@ -43,7 +47,7 @@ int main(int argc, char **argv){
 
     if(alunos == NULL){
         printf("\nNão foi possível alocar memória.\n");
-        exit(2);
+        exit(3);
     }
 
     // Chamada das funções para calculo
@@ -71,7 +75,7 @@ void preencherNotas(Alunos *a, int const qtd){
     for(int i = 0; i<qtd; i++){
 
         printf("\nInforme o nome do aluno %d: \n", i+1);
-        fgets(a[i].nome, 20, stdin);
+        fgets(a[i].nome, 40, stdin);
 
         a[i].nome[strcspn(a[i].nome, "\n")] = '\0';
 
